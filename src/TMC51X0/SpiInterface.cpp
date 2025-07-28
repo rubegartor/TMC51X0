@@ -66,12 +66,16 @@ SpiInterface::CipoDatagram SpiInterface::writeRead(CopiDatagram copi_datagram)
 
 void SpiInterface::enableChipSelect()
 {
+  delayMicroseconds(100);
   digitalWrite(spi_parameters_.chip_select_pin, LOW);
+  delayMicroseconds(100);
 }
 
 void SpiInterface::disableChipSelect()
 {
+  delayMicroseconds(100);
   digitalWrite(spi_parameters_.chip_select_pin, HIGH);
+  delayMicroseconds(100);
 }
 
 void SpiInterface::beginTransaction()
